@@ -1,5 +1,6 @@
 #include "list_lexer.h"
 #include "token.h"
+#include "../exceptions/exceptions.h"
 
 const std::string ListLexer::tokenNames[] = {"n/a", "<EOF>", "NAME", "COMMA", "LBRACK", "RBRACK"};
 
@@ -18,7 +19,10 @@ Token* ListLexer::nextToken()
 				{
 					return name();
 				}
-				// throw error
+				else
+				{
+					throw InvalidToken(c);
+				}
 		}
 	}
 
@@ -34,8 +38,8 @@ Token* ListLexer::name()
 	{
 		buff[i] = c;
 		consume();
+		i++;
 	} while (isLETTER());
-	// LOL this is shady as hell
 	return new Token(NAME, buff);
 }
 
