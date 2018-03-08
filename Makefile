@@ -20,4 +20,4 @@ $(EXECTEST): $(OBJTEST)
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf src/*.o src/lexer/*.o src/exceptions.*.o src/parser/*.o test/*.o lang test_lang *.log *~ *.xml
+	rm -rf src/*.o src/lexer/*.o src/exceptions/*.o src/parser/*.o test/*.o lang test_lang *.log *~ *.xml
