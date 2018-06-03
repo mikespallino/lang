@@ -31,3 +31,12 @@ make test_lang
 ./lang '[asdf,]'
 ./lang '341'
 ```
+
+## LLVM
+
+I've recently started going through the LLVM tutorial on implementing a language [here](http://releases.llvm.org/6.0.0/docs/tutorial/index.html#kaleidoscope-implementing-a-language-with-llvm). The LLVM folder will be updated as I go through the sections. The code in there is up to the end of chapter 3.
+
+Build that with the following:
+```
+clang++ -g -O3 kaleidoscope.cpp `llvm-config --cxxflags --ldflags --system-libs --libs core` -o kaleidoscope
+```
